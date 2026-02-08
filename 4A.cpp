@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>  
+#include <iomanip>
 
 using namespace std;
 
@@ -41,6 +42,22 @@ int main() {
         colorVector.push_back(temp); 
     }
     cout << "Total colors in vector now: " << colorVector.size() << endl;
+
+    
+    cout << "--- Milestone 4: Formatted Color List ---" << endl;
+    // Set table headers with fixed width
+    cout << left << setw(8) << "Color#" 
+         << setw(8) << "R value" 
+         << setw(8) << "G value" 
+         << setw(8) << "B value" << endl;
+    cout << "-------------------------------" << endl;
+    for (int i = 0; i < colorVector.size(); ++i) {
+        cout << left << setw(8) << (i + 1)  
+             << setw(8) << colorVector[i].red 
+             << setw(8) << colorVector[i].green 
+             << setw(8) << colorVector[i].blue << endl;
+    }
+
 
     return 0;
 }
